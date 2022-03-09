@@ -1,5 +1,10 @@
-require('dotenv').config();
+const { Client, Intents } = require('discord.js');
+const ENV = require('dotenv').config().parsed;
 
-API_KEY = process.env.API_KEY_SECRET;
+const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
-console.log(API_KEY);
+client.once('ready', () => {
+		console.log('Ready!');
+});
+
+client.login(ENV.API_KEY_SECRET);
