@@ -4,7 +4,7 @@ const { Sequelize, DataTypes } = require("sequelize");
 DB = new Sequelize("database", "user", "password", {
   host: "localhost",
   dialect: "sqlite",
-  logging: console.log,
+  logging: false, //console.log
   storage: path.resolve("./src/db/database.sqlite"),
   define: {
     freezeTableName: true,
