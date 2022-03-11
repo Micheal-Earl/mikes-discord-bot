@@ -5,11 +5,13 @@ DB = new Sequelize("database", "user", "password", {
   host: "localhost",
   dialect: "sqlite",
   logging: false, //console.log
-  storage: path.resolve("src/db/database.sqlite"),
+  storage: path.resolve("src", "db", "database.sqlite"),
   define: {
     freezeTableName: true,
   },
 });
+
+console.log("DB Path: " + path.resolve("src", "db", "database.sqlite"));
 
 Models = {
   User: DB.define(
