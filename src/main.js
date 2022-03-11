@@ -34,7 +34,6 @@ console.log(eventFiles);
 
 for (const file of eventFiles) {
   const event = require(`./events/${file}`);
-  console.log(event);
   if (event.once) {
     client.once(event.type, (...args) => event.execute(...args));
   } else {
