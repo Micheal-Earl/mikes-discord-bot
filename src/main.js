@@ -7,6 +7,7 @@ const {
   MessageButton,
 } = require("discord.js");
 const { API_KEY } = require("../config.json");
+const sequelize = require("./db/database.js");
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
